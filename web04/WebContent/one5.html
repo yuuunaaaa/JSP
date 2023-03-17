@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body { /* 컨트롤 + / - 자동주석, 태그선택! */
+	background: #037BFC;
+}
+
+button {
+	background: #18DE02;
+}
+
+.t1 { /* .은 클래스 선택!, 여러개선택!  */
+	background: yellow;
+	width: 150px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<h3>음악 검색(상세) 페이지</h3>
+	<hr>
+	<a href="bbs.html">
+		<button id="b1">첫페이지로</button>
+	</a>
+	<hr>
+	<!-- a태그는 무조건 get 방식 요청 -->
+	<a href="one5.jsp?id=1">
+		<button style="background: pink">1번 게시물</button>
+	</a>
+	<a href="one5.jsp?id=2">
+		<button style="background: pink">2번 게시물</button>
+	</a>
+	<a href="one5.jsp?id=3">
+		<button style="background: pink">3번 게시물</button>
+	</a>
+	<form action="one5.jsp" method="get">
+		<!-- http://localhost:8898/web00/delete2.jsp?no=100 -->
+		<!-- http의 header(요청주소+Get방식으로 넘어가는 데이터) -->
+		<table border="1">
+			<tr>
+				<td class="t1">검색할 id :</td>
+				<td><input name="id"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="t1">
+					<button id="b2">게시판 검색할 id 데이터 전송</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<form action="one55.jsp" method="get">
+		<!-- http://localhost:8898/web00/delete2.jsp?no=100 -->
+		<!-- http의 header(요청주소+Get방식으로 넘어가는 데이터) -->
+		<table border="1">
+			<tr>
+				<td class="t1">검색할 제목 :</td>
+				<td><input name="id"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="t1">
+					<button id="b2">게시판 검색할 제목 데이터 전송</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<form action="list5.jsp" method="get">
+		<button id="b2">플레이리스트</button>
+	</form>
+</body>
+</html>

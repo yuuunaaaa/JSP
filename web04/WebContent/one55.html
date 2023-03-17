@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body { /* 컨트롤 + / - 자동주석, 태그선택! */
+	background: pink;
+}
+
+button {
+	background: lime;
+}
+
+.t1 { /* .은 클래스 선택!, 여러개선택!  */
+	background: yellow;
+	width: 150px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<h3>음악 검색(상세) 페이지</h3>
+	<hr>
+	<a href="one5.html">
+		<button id="b1">첫페이지로</button>
+	</a>
+<hr>
+
+<form action="one55.jsp" method="get">
+<table border="1">
+			<tr>
+				<td class="t1">검색할 제목 :</td>
+				<td><input name="title" value="o"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="t1">
+					<button id="b2">검색할 제목 데이터 전송</button>
+				</td>
+			</tr>
+		</table>
+</form>
+
+</body>
+</html>

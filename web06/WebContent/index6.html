@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function check() {
+		nameTag = document.getElementById("name").value
+		companyTag = document.getElementById("company").value
+		positionTag = document.getElementById("position").value
+		genderTag = document.getElementById("gender").value
+		resultTag = document.getElementById("result")
+
+		if (genderTag == '남자') {
+			resultTag.innerHTML = companyTag + '회사에 ' + positionTag + '으로 있는 '
+			+ nameTag + '입니다. <br><img src=img/man.png width=200 height=300>'
+		} else if (genderTag == '여자') {
+			resultTag.innerHTML = companyTag + '회사에 ' + positionTag + '으로 있는 '
+			+ nameTag + '입니다. <br><img src=img/woman.png width=200 height=300>'
+		} 
+	}
+</script>
+
+</head>
+<body>
+	이름 :
+	<input id='name' value='홍길동'>
+	<br> 회사명 :
+	<input id='company' value='멀티'>
+	<br> 직책 :
+	<input id='position' value='팀장'>
+	<br> 성별
+	<input id='gender' value='남자'>
+	<br>
+	<button onclick="check()">확인</button>
+
+	<hr color="red">
+	<div id="result"
+		style="color: red; background: yellow; width: 610px; height: 350px; font-size: 30px">결과넣는
+		곳.</div>
+
+</body>
+</html>

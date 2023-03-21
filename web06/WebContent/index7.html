@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function bag() {
+		firstTag = document.getElementById("first").value
+		resultTag = document.getElementById("result")
+
+		if (firstTag == '휴대폰') {
+			resultTag.innerHTML = '<img src=img/phone.png width=200 height=300>'
+		} else if (firstTag == '시계') {
+			resultTag.innerHTML = '<img src=img/watch.png width=200 height=300>'
+		} else {
+			resultTag.innerHTML = '<img src=img/no.jpg width=300 height=200>'
+		}
+	}
+	
+	function bag2() {
+		secondTag = document.getElementById("second").value
+		resultTag = document.getElementById("result")
+
+		if (secondTag == '휴대폰') {
+			resultTag.innerHTML = '<img src=img/phone.png width=200 height=300>'
+		} else if (secondTag == '시계') {
+			resultTag.innerHTML = '<img src=img/watch.png width=200 height=300>'
+		} else {
+			resultTag.innerHTML = '<img src=img/no.jpg width=300 height=200>'
+		}
+	}
+</script>
+
+</head>
+<body>
+	가방 안에 들어 있는 물건 중 제일 중요한 것 입력 :
+	<input id='first' value='휴대폰'>
+	<button onclick="bag()">확인</button>
+	<br>가방 안에 들어 있는 물건 중 두 번째로 중요한 것 입력 :
+	<input id='second' value='시계'>
+	<button onclick="bag2()">확인</button>
+
+	<hr color="red">
+	<div id="result"
+		style="color: red; background: yellow; width: 200px; height: 300px; font-size: 30px">결과넣는
+		곳.</div>
+
+</body>
+</html>

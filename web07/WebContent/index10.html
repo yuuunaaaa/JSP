@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+$(function() { //body태그 부분을 ram에 dom tree로 읽어와서 준비가 되면, 
+	//function함수 부분을 실행해주세요.!
+	//$(선택하는 것)-- 태그명 button, 아이디 #b1, 클래스 .t2 
+	$('#b1').click(function() {
+		i2 = $('#in2').val()
+		i3 = $('#in3').val()
+		m = $('#me').val()
+		divTag = $('#result')
+		if (i2 == 1 && i3 == 1) {
+			//divTag.text("우산 꼭 챙기세요")
+			divTag.html("<font color=red>우산 꼭 챙기세요</font><br>")
+		} else {
+			divTag.html("<font color=red>우산 확인하세요</font><br>")
+		}
+		divTag.append(m + "<br>")
+	}) //b1
+})//$
+</script>
+
+</head>
+<body>
+비가 오나요? 1)온다 2) 안온다 
+<input id="in2" value="1" style="background:yellow"> <br>
+
+구름이 많은가요? 1)많다 2)아니다
+<input id="in3" value="1" style="background:pink"> <br>
+
+내 오늘 기분은?
+<input id="me" value="하하하..." style="background:lightblue"> <br>
+
+<button id="b1">결과</button> <br>
+<hr color="red">
+<div id="result"></div>
+</body>
+</html>

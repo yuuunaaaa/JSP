@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+$(function() { //body태그 부분을 ram에 dom tree로 읽어와서 준비가 되면, 
+	//function함수 부분을 실행해주세요.!
+	//$(선택하는 것)-- 태그명 button, 아이디 #b1, 클래스 .t2 
+	$('#b1').click(function() {
+		t1 = $('#food').val()
+		t2 = $('#where').val()
+		alert('당신이 먹고 싶은 음식은 ' + t1 + '이고, 가고 싶은 곳은 ' + t2 + '군요')
+	}) //b1
+	
+	$('#b2').click(function() {
+		t1 = $('#site').val()
+		if (t1 == 'movie') {
+			location.href="http://cgv.co.kr"
+		}} else {
+			location.href = "http://www.15881588.com/condo/sub_tab.html?goods_no=859&def_pno=8889"
+		}
+	}) //b2
+	
+})
+</script>
+
+</head>
+<body>
+먹고 싶은 음식 : 
+<input id="food" style="background:yellow"> <br>
+
+가고 싶은 곳 : 
+<input id="where" style="background:pink"> <br>
+
+<button id="b1">결과</button> <br>
+
+현재 제일 내가 많이 들어가는 사이트 : 
+<input id="site" style="background:yellow"> <br>
+
+<button id="b2">이동</button>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() {
+
+		$("#b1").click(
+				function() {
+					$.ajax({
+						url : "data/dataset2.xml",
+						success : function(doc) {
+							alert("xml요청 성공 >> " + doc)
+							list = $(doc).find("record") // find의 결과는 항상 여러개 ==> 배열로 만들어짐
+							alert(list.length)
+							for (i = 0; i < list.length; i++) { // 타입 상관없어서 안적어줘도 된다
+								id = $(list[i]).find('id').text()
+								model = $(list[i]).find('model').text()
+								color = $(list[i]).find('color').text()
+								money = $(list[i]).find('money').text()
+								$('#result').append(
+										id + ", " + model + ", " + color + ", "
+												+ money + "<br>")
+								$.ajax({
+									url : "mock2.jsp",
+									async : "false",
+									data : {
+										id : id,
+										model : model,
+										color : color,
+										money : money
+									},
+									success : function() {
+										console.log('넣기 성공~!')
+									} //success
+								}) //ajax
+							}
+						}
+					}) // ajax
+				}) // b1
+
+		$("#b2").click(
+				function() {
+					$.ajax({
+						url : "data/dataset2.xml",
+						success : function(doc) {
+							alert("xml요청 성공 >> " + doc)
+							list = $(doc).find("record") // find의 결과는 항상 여러개 ==> 배열로 만들어짐
+							alert(list.length)
+							for (i = 0; i < list.length; i++) { // 타입 상관없어서 안적어줘도 된다
+								id = $(list[i]).find('id').text()
+								model = $(list[i]).find('model').text()
+								color = $(list[i]).find('color').text()
+								money = $(list[i]).find('money').text()
+								$('#result').append(
+										id + ", " + model + ", " + color + ", "
+												+ money + "<br>")
+								$.ajax({
+									url : "mock2.jsp",
+									async : "false",
+									data : {
+										id : id,
+										model : model,
+										color : color,
+										money : money
+									},
+									success : function() {
+										console.log('넣기 성공~!')
+									} //success
+								}) //ajax
+							}
+						}
+					}) // ajax
+				}) // b2
+	}) // $
+</script>
+</head>
+<body bgcolor="lightblue">
+	<button style='color: white; background: blue' id="b1">XML받아오기-1</button>
+	<br> 삭제할 id 입력 :
+	<input id="b2">
+	<button style='color: white; background: blue' id="b1">삭제</button>
+	<br>
+	<hr color="blue">
+	<div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="food">
+	
+	<insert id="insert" parameterType="com.multi.mvc09.FoodVO">
+		insert into food values (#{id}, #{pw}, #{name}, #{favorite})
+	</insert>
+	
+	<delete id="delete"  parameterType="String">
+		delete from food where id = #{id}
+	</delete>
+	
+	<update id="update"  parameterType="foodVO">
+		update food set favorite = #{favorite} where id = #{id}
+	</update>
+	
+	<select id="one"  parameterType="String" resultType="foodVO">
+		select * from food where id =#{id}
+	</select>
+	
+	<select id="all" resultType="foodVO">
+		select * from food
+	</select>
+	
+</mapper>
